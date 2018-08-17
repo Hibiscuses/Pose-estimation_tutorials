@@ -8,6 +8,6 @@
 
 ## 2018 pose estimation相关文章整理
 
-### Cascaded Pyramid Network for Multi-Person Pose Estimation, 2018 CVPR
+Cascaded Pyramid Network for Multi-Person Pose Estimation, 2018 CVPR
 
 
