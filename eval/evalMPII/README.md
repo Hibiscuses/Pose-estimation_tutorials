@@ -1,6 +1,6 @@
 ## Evaluation on MPII Human Pose Dataset
 
-This README provides instructions on how to prepare your predictions using MATLAB for evaluation on MPII HumanPose Dataset. Predictions should emailed to *[leonid at mpi-inf.mpg.de]* and *[eldar at mpi-inf.mpg.de]*.
+MPII提供了用于测试你的实验结果的matlab代码。如果想刷榜，你的结果可以email到*[leonid at mpi-inf.mpg.de]*和*[eldar at mpi-inf.mpg.de]*。
 
 ### Preliminaries
 Download [evaluation toolkit](http://human-pose.mpi-inf.mpg.de/results/mpii_human_pose/evalMPII.zip).
