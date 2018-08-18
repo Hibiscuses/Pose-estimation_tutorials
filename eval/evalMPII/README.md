@@ -1,15 +1,13 @@
 ## Evaluation on MPII Human Pose Dataset
 
+翻译自MPII数据集官网
 MPII提供了用于测试你的实验结果的matlab代码。如果想刷榜，你的结果可以email到*[leonid at mpi-inf.mpg.de]*和*[eldar at mpi-inf.mpg.de]*。
-
-### Preliminaries
-Download [evaluation toolkit](http://human-pose.mpi-inf.mpg.de/results/mpii_human_pose/evalMPII.zip).
 
 ### Multi-Person Pose Estimation
 
-#### Evaluation protocol
-- Evaluation is performed on groups of multiple people. One image may contain multiple groups.
-- Each group is localized by computing `x1, y1, x2, y2` group boundaries from locations of all people in the group and cropping around those boundaries.
+#### 估计工具的使用
+- 用于多人姿态估计
+- 对于所有出现的人，都计算一组'x1,y1,x2,y2'的位置边界信息，crop的时候按照这个位置信息裁剪
     ```
     pos = zeros(length(rect),2);
     for ridx = 1:length(rect)
@@ -17,7 +15,7 @@ Download [evaluation toolkit](http://human-pose.mpi-inf.mpg.de/results/mpii_huma
     end
     x1 = min(pos(:,1)); y1 = min(pos(:,2)); x2 = max(pos(:,1)); y2 = max(pos(:,2));
     ```
-- Scale of each group is computed as an average scale of all people in the group.
+- 每一组的变换尺度都用所有人的变换尺度取平均
     ```
     scale = zeros(length(rect),2);
     for ridx = 1:length(rect)
@@ -25,7 +23,7 @@ Download [evaluation toolkit](http://human-pose.mpi-inf.mpg.de/results/mpii_huma
     end
     scaleGroup = mean(scale);
     ```
-- Using ground truth number of people is **not allowed**.
+- ground truth中不能包含人数信息
 - Using approximate location of each person while estimating person's pose is **not allowed**.
 - Using individual scale of each person while estimating person's pose is **not allowed**.
 
