@@ -28,7 +28,7 @@ DensePose: Dense Human Pose Estimation In The Wild
 
 ## pose相关的经典文章整理
 Stacked Hourglass Networks for Human Pose Estimation, 2016 ECCV
-- 必须要看的一片文章，非常经典，融合了多个尺度信息的沙漏网络。不管是做单人还是多人的top-down，stacked hourglass是大多数姿态估计网络的主要结构。代码可以参见我的github，有一版mxnet的复现：https://github.com/IcewineChen/mxnet-stacked_hourglass, 一版pytorch的代码：https://github.com/IcewineChen/pytorch-pose-hg-3d的2d branch,fork自xingyizhou并调整了一些bug
+- 必须要看的一片文章，非常经典，融合了多个尺度信息的沙漏网络。不管是做单人还是多人的top-down，stacked hourglass是大多数姿态估计网络的主要结构。代码可以参见我的github，有一版mxnet的复现：https://github.com/IcewineChen/mxnet-stacked_hourglass, 一版pytorch的代码：https://github.com/IcewineChen/pytorch-pose-hg-3d 的2d branch,fork自xingyizhou并调整了一些bug
 
 Convolutional pose machines, 2016 CVPR
 - 另一篇单人姿态估计的经典方法，多个stage响应结合特征传递，引入中继监督和扩大感受野等各种trick提高性能，对遮挡条件下的估计也有很强的鲁棒性。代码作者在文章中给了开源地址
