@@ -34,7 +34,7 @@ Convolutional pose machines, 2016 CVPR
 - 另一篇单人姿态估计的经典方法，多个stage响应结合特征传递，引入中继监督和扩大感受野等各种trick提高性能，对遮挡条件下的估计也有很强的鲁棒性。代码作者在文章中给了开源地址
 
 Learning Feature Pyramids for Human Pose Estimation, 2017 ICCV
-- 这篇文章写得很好，读起来非常顺应思路。结构上改动不大，基于沙漏结构，修改了残差连接的结构，在输入上用了多个scale，根据方差的推导提出了新的初始化方法。值得一读，学习写作。
+- 这篇文章写得很好，读起来非常顺应思路。结构上改动不大，基于沙漏结构，修改了残差连接的结构，在输入上用了多个scale，根据方差的推导提出了新的初始化方法。值得一读，学习写作。我复现了这篇文章的pytorch版本，传送门：https://github.com/IcewineChen/pytorch-PyraNet
 
 
 
