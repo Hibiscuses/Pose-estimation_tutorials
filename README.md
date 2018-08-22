@@ -12,7 +12,9 @@
 
 到底什么是pose estimation？可以这么理解：对人体的姿态信息进行估计，通过人体骨架的形式表现出来。如下面这张图：
 
-![avatar](https://camo.githubusercontent.com/fe6a3425203fd42bb3c21feb54ed6117e8449fcb/68747470733a2f2f6769746875622e636f6d2f434d552d5065726365707475616c2d436f6d707574696e672d4c61622f6f70656e706f73652f7261772f6d61737465722f646f632f6d656469612f6b6579706f696e74735f706f73655f31382e706e67)
+<div style="align: center">
+<img src="https://camo.githubusercontent.com/fe6a3425203fd42bb3c21feb54ed6117e8449fcb/68747470733a2f2f6769746875622e636f6d2f434d552d5065726365707475616c2d436f6d707574696e672d4c61622f6f70656e706f73652f7261772f6d61737465722f646f632f6d656469612f6b6579706f696e74735f706f73655f31382e706e67"/>
+</div>
 
 这张图表明了姿态估计的任务要求:获取关键点位置，最终表达成骨架的形式。目前常见的姿态估计的任务细分主要是单人的姿态估计和多人姿态估计，单人姿态估计较成熟，以stacked hourglass为基础结构的一系列网络已经基本摸到了天花板。多人上目前还有提升空间，主要以自顶向下方法：先检测人再对每个人分别做姿态估计，和自底向上方法：先检测所有关键点，再分配的人构建多人姿态估计结果为主。自顶向上依赖检测器和后续的冗余信息处理，但是随着目前检测器性能的上升，将各种精度高的模块组合之后性能好。自底向下性能不如自顶向下好，但是由于省去了检测人的步骤，速度快，可以实现实时的多人pose estimation。具体的一些介绍和tutorial可参见tutorials部分，传送门：https://github.com/IcewineChen/Pose-estimation_tutorials/blob/master/tutorials/Posetutorial.ipynb
 
@@ -31,7 +33,7 @@ MultiPoseNet: Fast Multi-Person Pose Estimation using Pose Residual Network, 201
 DensePose: Dense Human Pose Estimation In The Wild, 2018 CVPR
 - FAIR 2018年年初发表的文章。demo效果很有意思，文章方法综合了语义信息，结合采样点得到了一个密集的pose估计。project的传送门：https://github.com/facebookresearch/DensePose
 
-LSTM pose machine , CVPR 2018
+LSTM Pose Machines, CVPR 2018
 - 以Convolutional pose machine作为baseline
 
 #### 单人姿态估计
