@@ -1,3 +1,5 @@
-## deep learning
+## Keep calm and deep learning
 
-总结一些关于深度学习的知识、trick和我的一些学习新的
+some dl tutorials and tricks share.
+
+从框架使用到一些杂碎的学到的深度学习方法，技巧
