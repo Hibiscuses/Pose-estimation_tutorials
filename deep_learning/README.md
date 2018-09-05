@@ -1,5 +1,18 @@
-## Keep calm and deep learning
+# 深度学习分享
 
-some dl tutorials and tricks share.
+Some dl tutorials and tricks share.
 
-从框架使用到一些杂碎的学到的深度学习方法，技巧
+从框架使用到一些杂碎的学到的深度学习方法，技巧。
+> Keep calm and deep learning.
+
+这是还在陌陌的时候，图像组制作的一条标语。送给所有炼丹人共勉。
+
+## 框架使用杂谈与分享
+我的杂谈传送门：https://icewinechen.com/2018/07/29/gluon/
+
+如果朋友刚入坑，从我个人偏好来说，pytorch和mxnet都很不错，尤其推荐mxnet，不会推荐tensorflow，不过从我听过的不少分享会来说，tf还是不少企业在用。但是目前发布的版本好多老api调用出了问题……服务器升级cuda9后，我把tf版本更新到1.10，发现我之前在1.2和1.4下的代码都出现跑不了的情况，还好早就复现了其他版本……虽然tf社区强大背靠google，但我觉得他确实不好用，至少从research角度讲一般。部署上mxnet或是caffe都不差。据说1.6后加入了一个eager机制？没用过就不说了。
+
+动态图相对于静态图调试方便很多，去符号式的编程也更适合很多开发者思维的人的编程逻辑。对某些researcher来说，符号式可能更舒服一点。mxnet就采各家所长了，可以说是非常的优秀，部署上也有大量对接api，吃我一发安利。pytorch动态图但是不引入符号式，在学术更推崇一点。caffe，emmmm，心情复杂。
+
+## 其他一些分享
+都放在这个目录下啦。感兴趣随便看看。
