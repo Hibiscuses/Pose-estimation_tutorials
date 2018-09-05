@@ -36,8 +36,16 @@ DensePose: Dense Human Pose Estimation In The Wild, 2018 CVPR
 LSTM Pose Machines, CVPR 2018
 - 以Convolutional pose machine作为baseline
 
+Generative Partition Networks for Multi-Person Pose Estimation，2018 ECCV
+- 还没细看，看完更新补上这篇文章的简单介绍
+
 #### 单人姿态估计
-18年目前没看到很好的相关文章。大概stacked hourglass融入的各种trick已经导致性能很难大幅上升，基于stacked hourglass相对最好的工作大概是17 ICCV的PRM？在下面的经典文章中有提到。一些经典的单人姿态估计文章和方法在下面会有提到。
+18年目前没看到很好的相关文章。大概stacked hourglass融入的各种trick已经导致性能很难大幅上升，基于stacked hourglass相对最好的工作大概是17 ICCV的PRM？目前18年ECCV的MSSNet已经超过PRM-B（2018.9.5更新），在下面的经典文章中有提到。一些经典的单人姿态估计文章和方法在下面会有提到。
+
+18年文章列表：
+
+Multi-Scale Structure-Aware Network for Human Pose Estimation，2018 ECCV
+- 击坠了PRM-B之前的92.0，在MPII上提升到了92.1……其实区别不大，文章17年在arxiv就已经看得到了，中了18年的ECCV。总体思路还是基于stacked hourglass，主要是在hourglass的每个尺度上都把信息融合在loss上，做了一个multi-scale supervision。
 
 ## pose相关的代表文章整理
 Stacked Hourglass Networks for Human Pose Estimation, 2016 ECCV
@@ -47,7 +55,7 @@ Convolutional pose machines, 2016 CVPR
 - 另一篇单人姿态估计的经典方法，多个stage响应结合特征传递，引入中继监督和扩大感受野等各种trick提高性能，对遮挡条件下的估计也有很强的鲁棒性。代码作者在文章中给了开源地址。
 
 Learning Feature Pyramids for Human Pose Estimation, 2017 ICCV
-- 这篇文章写得很好，读起来非常顺应思路。结构上改动不大，基于沙漏结构，修改了残差连接的结构，在输入上用了多个scale，根据方差的推导提出了新的初始化方法。值得一读，学习写作。我复现了这篇文章的pytorch版本，传送门：https://github.com/IcewineChen/pytorch-PyraNet
+- 这篇文章写得很好，读起来非常顺应思路。结构上改动不大，基于沙漏结构，修改了残差连接的结构，在输入上用了多个scale，根据方差的推导提出了新的初始化方法。值得一读，学习写作。我复现了这篇文章的pytorch版本，传送门：https://github.com/IcewineChen/pytorch-PyraNet .PRM-B在MPII上跑出了
 
 Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields, 2017 CVPR
 - 经典的多人姿态估计bottom-up方法，通过PAF编码相对位置的空间信息，巧妙在多人重叠条件下优化了连接的np-hard问题。代码开源在github上，工作组发布了一个openpose库，基本可以实现实时姿态估计。
@@ -57,3 +65,14 @@ Associative Embedding: End-to-End Learning for Joint Detection and Grouping, 201
 
 RMPE: Regional Multi-person Pose Estimation, 2017 ICCV
 - 堆积了当时大量的state-of-the-art方法作为模块组成，自顶向下的多人姿态估计。重点放在最后单人姿态估计后的处理，解决定位误差和bounding box冗余的问题。引入了一种姿态参数的nms和一个对称空间变幻网络，效果很不错，在github开源了alphapose的系统
+
+Adversarial PoseNet: A Structure-aware Convolutional Network for Human Pose Estimation，arxiv
+- 这篇文章我似乎见过发表的版本，不过我最早看的时候还是挂在arxiv上。引入GAN, 两个Discriminator轮流训练，引用confidence去做鉴别器的motivation是解决遮挡问题，思路上还是蛮站的住脚的，mpii上也刷出了92.1。
+
+Self Adversarial Training for Human Pose Estimation
+- 同样是引入GAN的方法，效果上跟上面一篇差不多。D沿用了stacked hourglass对heatmap再次重构，计算ground truth和生成heatmap的MSELoss。
+
+#### 单人姿态估计中基于stacked hourglass的方法
+stacked hourglass频繁作为baseline，被后续很多文章借鉴和改进。这几天对ECCV的pose文章进行了调研，把accepted list中挂在arxiv上的文章简单读了一下，发现2016年的stacked hourglass直到18年还是很多方法在借鉴和修改。很多文章在上面已经提到了，在这里总结一下，方便大家沿着这条线研究，也整理一下自己的思路。
+
+- [x] Stacked Hourglass Networks for Human Pose Estimation
