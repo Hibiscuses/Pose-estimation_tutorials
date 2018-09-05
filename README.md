@@ -76,3 +76,10 @@ Self Adversarial Training for Human Pose Estimation
 stacked hourglass频繁作为baseline，被后续很多文章借鉴和改进。这几天对ECCV的pose文章进行了调研，把accepted list中挂在arxiv上的文章简单读了一下，发现2016年的stacked hourglass直到18年还是很多方法在借鉴和修改。很多文章在上面已经提到了，在这里总结一下，方便大家沿着这条线研究，也整理一下自己的思路。
 
 - [x] Stacked Hourglass Networks for Human Pose Estimation
+- [x] Learning Feature Pyramids for Human Pose Estimation
+- [x] Multi-Scale Structure-Aware Network for Human Pose Estimation
+- [x] Self Adversarial Training for Human Pose Estimation
+
+and so on……还有不少，但是我一时间印象深刻的就这几篇。想起一点更新一点。
+
+很多用stacked hourglass的多人检测暂时先不归类。
