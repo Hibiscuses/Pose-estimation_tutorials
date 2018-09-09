@@ -42,7 +42,7 @@ Generative Partition Networks for Multi-Person Pose Estimation，2018 ECCV
 #### 单人姿态估计
 18年目前没看到很好的相关文章。大概stacked hourglass融入的各种trick已经导致性能很难大幅上升，基于stacked hourglass相对最好的工作大概是17 ICCV的PRM？目前18年ECCV的MSSNet已经超过PRM-B（2018.9.5更新），在下面的经典文章中有提到。一些经典的单人姿态估计文章和方法在下面会有提到。
 
-18年文章列表：
+18年ECCV文章列表：
 
 Multi-Scale Structure-Aware Network for Human Pose Estimation，2018 ECCV
 - 击坠了PRM-B之前的92.0，在MPII上提升到了92.1……其实区别不大，文章17年在arxiv就已经看得到了，中了18年的ECCV。总体思路还是基于stacked hourglass，主要是在hourglass的每个尺度上都把信息融合在loss上，做了一个multi-scale supervision。
