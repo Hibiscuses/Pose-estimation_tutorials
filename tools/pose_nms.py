@@ -209,6 +209,9 @@ def merge_pose(root_pose, cluster_pose_loc, cluster_pose_conf, keypoint_width):
 
     return final_pose, final_scores
 
+if __name__ == "__main__":
+    detections = np.load("./detections.save.npz")
+    detections = detections["arr_0"]
+    detections = np.array(detections)
 
-
-
+    pose_nms(detections)
