@@ -1,11 +1,19 @@
 # Pose Estimation tutorials
 
-这个repo的内容包含了2d和3d pose estimation的一些代码和我的一些读过的觉得比较有用的文章、简单的paper reading和理解内容。代码部分包含了一些pose estimation常用的工具，其中一些需要用到的比如关键点gaussian heatmap生成的代码，性能评估，一些数据集的不同框架下的dataloader，比如mpii下的pytorch dataloader等等。以2d相关工作为主。长期更新，总结和分享学到的pose estimation和deep learning，计算机视觉相关的内容。
+这个repo的内容是我在硕士研究生期间学到的很多deep learning内容的大汇总，我的研究方向是pose estimation。仓库里包含了2d和3d pose estimation的一些代码和我的一些读过的觉得比较有用的文章、简单的paper reading和理解内容。代码部分包含了一些pose estimation常用的工具，其中一些需要用到的比如关键点gaussian heatmap生成的代码，性能评估，一些数据集的不同框架下的dataloader，比如mpii下的pytorch dataloader等等。
 
+以2d相关工作为主。
+
+深度学习相关内容请参见传送门:https://github.com/IcewineChen/Pose-estimation_tutorials/tree/master/deep_learning。从扯王八犊子到很多炼丹体验心得到具体的一些理论分析。
+
+
+长期更新，总结和分享学到的pose estimation和deep learning，计算机视觉相关的内容。
+
+- deep_learning部分分享了一些我关于框架使用或是代码片段的分享，还有一些学习过程中的心得。有什么炼丹心得之类的都扔在这，各种神奇trick、理论的分析都放在这啦，欢迎阅读和issue讨论。
 - 在tutorials部分整理了一些pose estimation的简单介绍和tutorial，一些文章的paper reading，代码分析之类的内容。目前包含了简单的姿态估计介绍，后续会继续更新
 - 在eval部分整理了一些数据集上的eval工具，我会翻译和介绍一些使用方法之类的东西。
-- 在tools部分整理了一些pose相关实验常用的工具代码。如上述提到的heatmap生成等代码
-- deep_learning部分分享了一些我关于框架使用或是代码片段的分享，还有一些学习过程中的心得
+- 在tools部分整理了一些pose相关实验常用的工具代码，如上述提到的heatmap生成等代码。
+
 
 ## 关于pose estimation
 目前的2D Pose estimation主要分为两类：第一类是单人pose estimation，目前主流方法以stacked hourglass或者convulution pose machine结构为基础为主，后续多次的state-of-the-art主要基于这两种结构的基础上再进行改动，多数以堆积一些新的trick提高性能为主。
@@ -73,7 +81,7 @@ Self Adversarial Training for Human Pose Estimation
 - 同样是引入GAN的方法，效果上跟上面一篇差不多。D沿用了stacked hourglass对heatmap再次重构，计算ground truth和生成heatmap的MSELoss。
 
 #### 单人姿态估计中基于stacked hourglass的方法
-stacked hourglass频繁作为baseline，被后续很多文章借鉴和改进。这几天对ECCV的pose文章进行了调研，把accepted list中挂在arxiv上的文章简单读了一下，发现2016年的stacked hourglass直到18年还是很多方法在借鉴和修改。很多文章在上面已经提到了，在这里总结一下，方便大家沿着这条线研究，也整理一下自己的思路。
+stacked hourglass频繁作为baseline，被后续很多文章借鉴和改进。这几天对ECCV的pose文章进行了调研，把accepted list中挂在arxiv上的文章简单读了一下，发现2016年的stacked hourglass直到18年还是很多方法在借鉴和修改。很多文章在上面已经提到了，在这里总结一下，把一些有代表性思路的文章贴出来，方便大家沿着这条线研究，也整理一下自己的思路。
 
 - [x] Stacked Hourglass Networks for Human Pose Estimation
 - [x] Learning Feature Pyramids for Human Pose Estimation
@@ -82,4 +90,4 @@ stacked hourglass频繁作为baseline，被后续很多文章借鉴和改进。�
 
 and so on……还有不少，但是我一时间印象深刻的就这几篇。想起一点更新一点。
 
-很多用stacked hourglass的多人检测暂时先不归类。
+很多top-down方法用stacked hourglass做姿态估计器的多人pose estimation暂时先不归类。
