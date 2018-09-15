@@ -4,9 +4,14 @@
 
 以2d相关工作为主。
 
-深度学习相关内容请参见传送门:https://github.com/IcewineChen/Pose-estimation_tutorials/tree/master/deep_learning。从扯王八犊子到很多炼丹体验心得到具体的一些理论分析。
+## 2018.9.14
 
+大幅更新dl相关心得。
 
+深度学习相关内容请参见传送门:https://github.com/IcewineChen/Pose-estimation_tutorials/tree/master/deep_learning
+从扯王八犊子到很多炼丹体验心得到具体的一些理论分析。
+
+## 漫游指南
 长期更新，总结和分享学到的pose estimation和deep learning，计算机视觉相关的内容。
 
 - deep_learning部分分享了一些我关于框架使用或是代码片段的分享，还有一些学习过程中的心得。有什么炼丹心得之类的都扔在这，各种神奇trick、理论的分析都放在这啦，欢迎阅读和issue讨论。
