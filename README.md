@@ -2,7 +2,7 @@
 
 这个repo的内容是我在硕士研究生期间学到的很多deep learning内容的大汇总，我的研究方向是pose estimation。仓库里包含了2d和3d pose estimation的一些代码和我的一些读过的觉得比较有用的文章、简单的paper reading和理解内容。代码部分包含了一些pose estimation常用的工具，其中一些需要用到的比如关键点gaussian heatmap生成的代码，性能评估，一些数据集的不同框架下的dataloader，比如mpii下的pytorch dataloader等等。
 
-以2d相关工作为主。
+以2d相关工作为主。长期更新，看到新文章或是有意思的问题都会更新汇总进来。
 
 ## 2018.9.14
 
@@ -18,7 +18,6 @@
 - 在tutorials部分整理了一些pose estimation的简单介绍和tutorial，一些文章的paper reading，代码分析之类的内容。目前包含了简单的姿态估计介绍，后续会继续更新
 - 在eval部分整理了一些数据集上的eval工具，我会翻译和介绍一些使用方法之类的东西。
 - 在tools部分整理了一些pose相关实验常用的工具代码，如上述提到的heatmap生成等代码。
-
 
 ## 关于pose estimation
 目前的2D Pose estimation主要分为两类：第一类是单人pose estimation，目前主流方法以stacked hourglass或者convulution pose machine结构为基础为主，后续多次的state-of-the-art主要基于这两种结构的基础上再进行改动，多数以堆积一些新的trick提高性能为主。
@@ -53,12 +52,19 @@ Generative Partition Networks for Multi-Person Pose Estimation，2018 ECCV
 - 还没细看，看完更新补上这篇文章的简单介绍
 
 #### 单人姿态估计
-18年目前没看到很好的相关文章。大概stacked hourglass融入的各种trick已经导致性能很难大幅上升，基于stacked hourglass相对最好的工作大概是17 ICCV的PRM？目前18年ECCV的MSSNet已经超过PRM-B（2018.9.5更新），在下面的经典文章中有提到。一些经典的单人姿态估计文章和方法在下面会有提到。
+18年目前没看到很好的单人估计相关文章。大概stacked hourglass融入的各种trick已经导致性能很难大幅上升，基于stacked hourglass相对最好的工作大概是17 ICCV的PRM？目前18年ECCV的MSSNet已经超过PRM-B（2018.9.5更新），在下面的经典文章中有提到。一些经典的单人姿态估计文章和方法在下面会有提到。
 
 18年ECCV文章列表：
 
 Multi-Scale Structure-Aware Network for Human Pose Estimation，2018 ECCV
 - 击坠了PRM-B之前的92.0，在MPII上提升到了92.1……其实区别不大，文章17年在arxiv就已经看得到了，中了18年的ECCV。总体思路还是基于stacked hourglass，主要是在hourglass的每个尺度上都把信息融合在loss上，做了一个multi-scale supervision。
+
+Pose partition networks for Multi-person Pose Estimation, 2018 ECCV
+- 用hourglassnet生成关键点heatmap和dense joint-centroid回归图，之后根据dense regression的结果将关键点候选区域编码成embeddings，最后利用bottom-up中常见的贪心算法完成多人姿态的分配。
+
+Integral Human Pose Regression，MSRA
+- 来自MSRA的文章，一如既往的有保障，将之前的取heatmap->位置坐标这一过程的argmax操作改成了在heatmap回归结果上先归一化，再算期望的方式求得关键点。实验效果很有意思，一如MSRA的既往工作风格，很有效。在多人和3d问题上有提升。
+
 
 ## pose相关的代表文章整理
 Stacked Hourglass Networks for Human Pose Estimation, 2016 ECCV
